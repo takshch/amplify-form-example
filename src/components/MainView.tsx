@@ -3,6 +3,8 @@
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import NextButton from './Buttons/NextButton';
+import PreviousButton from './Buttons/PreviousButton';
 
 interface MainViewProps {
   steps: string[],
@@ -127,15 +129,7 @@ const MainView: React.FC<MainViewProps> = ({
           </>
         )}
         <div className="flex justify-end space-x-4 mt-8">
-          {currentStep > 1 && (
-            <button
-              type="button"
-              onClick={prevStep}
-              className="bg-gray-200 px-4 py-2 rounded text-gray-700"
-            >
-              Previous
-            </button>
-          )}
+          <PreviousButton onClick={prevStep} disabled={currentStep === 0} />
           {currentStep === steps.length ? (
             <button
               type="submit"
@@ -144,13 +138,7 @@ const MainView: React.FC<MainViewProps> = ({
               Submit
             </button>
           ) : (
-            <button
-              type="button"
-              onClick={nextStep}
-              className="bg-indigo-600 px-4 py-2 rounded text-white"
-            >
-              Next
-            </button>
+            <NextButton onClick={nextStep} />
           )}
         </div>
       </form>

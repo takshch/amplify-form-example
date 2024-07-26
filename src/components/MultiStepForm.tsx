@@ -6,10 +6,10 @@ import Navbar from './Navbar';
 import MainView from './MainView';
 
 const STEPS = [
-  'Choose source code provider',
-  'Add repository and branch',
-  'App settings',
-  'Review',
+  'App Details',
+  'Repository Configuration',
+  'Built Settings',
+  'Review & Submit',
 ];
 
 const MultiStepForm: React.FC = () => {
